@@ -12,9 +12,11 @@ public class EmployeeClient {
 		Employee employeeFromDB = new EmployeeDB("1234", "John", "Wick", "john.wick@gmail.com");		
 		employees.add(employeeFromDB);
 		
-		EmployeeLdap employeeLdap = new EmployeeLdap("chewie", "Solo", "Han", "solo.han@gmail.com");
+		EmployeeLdap employeeLdap = new EmployeeLdap("chewie", "Solo", "Han", "solo.han@gmail.com");		
+		employees.add(new EmployeeAdapterLdap(employeeLdap));
 		
-		employees.add(new EmployeeAdapterLdap(employeeLdap));		
+		EmployeeCSV employeeCsv = new EmployeeCSV("567,Sherlock,Holmes,scherlock.holmes@gmail.com");		
+		employees.add(new EmployeeAdapterCSV(employeeCsv));
 		
 		return employees;
 		
