@@ -8,6 +8,9 @@ public class TwitterDemo {
 		
 		System.out.println(service.getTimeline("blabla"));
 		
+		// try post(they are forbidden)
+		service.postToTimeline("blabla", "Post new thing");
+		
 	}
 
 }

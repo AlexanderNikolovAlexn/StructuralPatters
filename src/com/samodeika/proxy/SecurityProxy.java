@@ -21,6 +21,9 @@ public class SecurityProxy implements InvocationHandler {
 	public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
 		Object result;
 		try {
+			if(m.getName().contains("post")) {
+				throw new IllegalAccessException("Post are currently not allowed");
+			}
 			result = m.invoke(obj, args);
 		} catch (InvocationTargetException e) {
 			throw e.getTargetException();
